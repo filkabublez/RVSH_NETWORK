@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RВШ Network - Обучение</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <div class="container">
+        <nav class="main-nav">
+            <div class="nav-logo">
+                <img 
+                    src="images/logo.png" 
+                    alt="RВШ Network" 
+                    class="nav-logo-img"
+                >
+            </div>
+            <div class="nav-menu">
+                <a href="#" id="adminPanelBtn" class="nav-link admin-link" style="display: none;">Админ-панель</a>
+                <a href="/home.html" class="nav-link">Главная</a>
+                <a href="/messages.html" class="nav-link">Сообщения</a>
+                <a href="/learning.html" class="nav-link yellow-bg">Обучение</a>
+            </div>
+            <div class="nav-actions">
+                <button id="logoutBtn" class="logout-btn">Выйти</button>
+            </div>
+        </nav>
+
+        <main class="learning-container">
+            <div class="learning-header">
+                <h1>Обучение в РВШ</h1>
+                <p>Здесь собраны материалы, которые помогут вам стать лучше и эффективнее в работе штаба.</p>
+            </div>
+            
+            <div class="learning-content">
+                <div class="learning-materials">
+                    <h2>Материалы</h2>
+                    
+                    <div class="materials-tabs">
+                        <button class="tab-btn active" data-category="history">История штаба</button>
+                        <button class="tab-btn" data-category="authors">Авторские сборы</button>
+                        <button class="tab-btn" data-category="school">Школа младших инструкторов</button>
+                    </div>
+                    
+                    <div class="materials-content">
+                        <div class="materials-category active" id="history-materials">
+                            <h3>История штаба</h3>
+                            <div class="materials-list">
+                                <!-- Материалы добавляются динамически -->
+                                <div class="loading">Загрузка материалов...</div>
+                            </div>
+                        </div>
+                        
+                        <div class="materials-category" id="authors-materials">
+                            <h3>Авторские сборы</h3>
+                            <div class="materials-list">
+                                <!-- Материалы добавляются динамически -->
+                                <div class="loading">Загрузка материалов...</div>
+                            </div>
+                        </div>
+                        
+                        <div class="materials-category" id="school-materials">
+                            <h3>Школа младших инструкторов</h3>
+                            <div class="materials-list">
+                                <!-- Материалы добавляются динамически -->
+                                <div class="loading">Загрузка материалов...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="learning-progress">
+                    <h2>Мои успехи</h2>
+                    <div id="progressInfo" class="progress-info">
+                        <!-- Прогресс добавляется динамически -->
+                        <div class="progress-card">
+                            <div class="progress-name">Загрузка...</div>
+                            <div class="progress-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">0</span>
+                                    <span class="stat-label">Выполнено</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">0</span>
+                                    <span class="stat-label">Очков</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">0</span>
+                                    <span class="stat-label">Рейтинг</span>
+                                </div>
+                            </div>
+                            
+                            <div class="level-progress">
+                                <div class="level-number">Уровень 0</div>
+                                <div class="level-info">
+                                    <span>Опыт: 0/100</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <div class="xp-info">
+                                    Всего опыта: <span class="xp-value">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/learning.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+</html> 

@@ -1,0 +1,16 @@
+// Send Message Workflow
+When: "Send" button is clicked
+Data:
+- Input field: message_content
+
+Steps:
+1. Create a new thing:
+   - Type: Message
+   - Sender: Current User
+   - Receiver: Selected User (if private chat)
+   - Content: message_content
+   - Timestamp: Current Date/Time
+   - Is_Group_Chat: yes/no based on chat type
+
+2. Reset Input:
+   - Clear message_content field

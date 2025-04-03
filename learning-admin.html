@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RВШ Network - Управление обучением</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <div class="container">
+        <nav class="main-nav">
+            <div class="nav-logo">
+                <img 
+                    src="images/logo.png" 
+                    alt="RВШ Network" 
+                    class="nav-logo-img"
+                >
+            </div>
+            <div class="nav-menu">
+                <a href="#" id="adminPanelBtn" class="nav-link admin-link">Админ-панель</a>
+                <a href="/home.html" class="nav-link">Главная</a>
+                <a href="/messages.html" class="nav-link">Сообщения</a>
+                <a href="/learning.html" class="nav-link">Обучение</a>
+                <a href="/learning-admin.html" class="nav-link yellow-bg">Управление обучением</a>
+            </div>
+            <div class="nav-actions">
+                <button id="logoutBtn" class="logout-btn">Выйти</button>
+            </div>
+        </nav>
+
+        <main class="learning-container">
+            <div class="learning-header">
+                <h1>Управление обучением</h1>
+                <p>Здесь вы можете добавлять новые материалы для обучения участников РВШ.</p>
+            </div>
+            
+            <div class="admin-materials-container">
+                <div class="add-material-section">
+                    <h2>Добавить новый материал</h2>
+                    <form id="newMaterialForm" class="admin-form">
+                        <div class="form-group">
+                            <label for="materialTitle">Название</label>
+                            <input type="text" id="materialTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="materialCategory">Категория</label>
+                            <select id="materialCategory" required>
+                                <option value="history">История штаба</option>
+                                <option value="authors">Авторские сборы</option>
+                                <option value="school">Школа младших инструкторов</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="materialType">Тип</label>
+                            <select id="materialType" required>
+                                <option value="text">Текст</option>
+                                <option value="video">Видео</option>
+                                <option value="task">Задание</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="materialContent">Содержимое</label>
+                            <textarea id="materialContent" required></textarea>
+                        </div>
+                        <button type="submit" class="admin-button">Добавить материал</button>
+                    </form>
+                </div>
+                
+                <div class="existing-materials">
+                    <h2>Существующие материалы</h2>
+                    <div class="materials-tabs admin-tabs">
+                        <button class="tab-btn active" data-category="history">История штаба</button>
+                        <button class="tab-btn" data-category="authors">Авторские сборы</button>
+                        <button class="tab-btn" data-category="school">Школа младших инструкторов</button>
+                    </div>
+                    <div id="materialsList" class="materials-list admin-view">
+                        <!-- Материалы добавляются динамически -->
+                        <div class="loading">Загрузка материалов...</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/learning-admin.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+</html> 

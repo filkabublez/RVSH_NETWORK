@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RВШ Network - Главная</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <div class="container">
+        <nav class="main-nav">
+            <div class="nav-logo">
+                <img 
+                    src="images/logo.png" 
+                    alt="RВШ Network" 
+                    class="nav-logo-img"
+                >
+            </div>
+            <div class="nav-menu">
+                <a href="#" id="adminPanelBtn" class="nav-link admin-link" style="display: none;">Админ-панель</a>
+                <a href="/home.html" class="nav-link yellow-bg">Главная</a>
+                <a href="/messages.html" class="nav-link">Сообщения</a>
+                <a href="/learning.html" class="nav-link">Обучение</a>
+            </div>
+            <div class="nav-actions">
+                <button id="logoutBtn" class="logout-btn">Выйти</button>
+            </div>
+        </nav>
+
+        <main class="dashboard">
+            <section class="user-profile">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <img id="userPhoto" src="images/default-avatar.png" alt="Фото профиля" onerror="this.onerror=null; this.src='images/default-avatar.png';">
+                        <div class="profile-info">
+                            <h2 id="userName">Загрузка...</h2>
+                            <p>Ранг: <span id="userRank">Загрузка...</span></p>
+                            <p>Рейтинг: <span id="userRating">Загрузка...</span></p>
+                        </div>
+                    </div>
+                    <div class="current-task">
+                        <h3>Текущая задача:</h3>
+                        <p id="userTask">Загрузка...</p>
+                    </div>
+                </div>
+                <section class="schedule-section">
+                    <div class="schedule-card">
+                        <h2>Расписание мероприятий</h2>
+                        <div class="schedule-controls">
+                            <button class="schedule-nav" onclick="previousMonth()">←</button>
+                            <h3 id="currentMonth">Декабрь 2023</h3>
+                            <button class="schedule-nav" onclick="nextMonth()">→</button>
+                        </div>
+                        <div class="calendar">
+                            <div class="calendar-header">
+                                <div>Пн</div>
+                                <div>Вт</div>
+                                <div>Ср</div>
+                                <div>Чт</div>
+                                <div>Пт</div>
+                                <div>Сб</div>
+                                <div>Вс</div>
+                            </div>
+                            <div class="calendar-grid" id="calendarGrid">
+                                <!-- Заполняется через JavaScript -->
+                            </div>
+                        </div>
+                        <div class="events-list" id="eventsList">
+                            <!-- Заполняется через JavaScript -->
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+    <script src="js/home.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+</html> 

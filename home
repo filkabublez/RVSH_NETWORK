@@ -1,0 +1,31 @@
+// Create Home Page elements
+1. Navigation Bar (Group):
+   - Position: Top
+   - Elements:
+     - Logo (Image)
+     - Navigation Menu (Group):
+       - Events (Button)
+       - Messages (Button)
+       - Dashboard (Button)
+       - Admin Panel (Button, Condition: Current User's Role = "Admin")
+
+2. Welcome Section (Group):
+   - Heading: "Welcome to RВШ Social Network"
+   - Text: "Connect, learn, and grow with your fellow counselors"
+
+3. Upcoming Events Preview (Repeating Group):
+   - Data Source: Event
+   - Constraint: Date is after Current Date
+   - Sort by: Date ascending
+   - Limit: 3
+   - Elements per cell:
+     - Title (Text)
+     - Date (Text)
+     - Register Button (Button)
+
+4. Notifications Area (Group):
+   - Repeating Group:
+     - Data Source: Event
+     - Constraint: Date is within next 24 hours
+     - Elements:
+       - Alert Text: "Upcoming: [Event:Title]"

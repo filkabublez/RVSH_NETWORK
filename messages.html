@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RВШ Network - Сообщения</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <div class="container">
+        <nav class="main-nav">
+            <div class="nav-logo">
+                <img 
+                    src="images/logo.png" 
+                    alt="RВШ Network" 
+                    class="nav-logo-img"
+                >
+            </div>
+            <div class="nav-menu">
+                <a href="#" id="adminPanelBtn" class="nav-link admin-link" style="display: none;">Админ-панель</a>
+                <a href="/home.html" class="nav-link">Главная</a>
+                <a href="/messages.html" class="nav-link yellow-bg">Сообщения</a>
+                <a href="/learning.html" class="nav-link">Обучение</a>
+            </div>
+            <div class="nav-actions">
+                <button id="logoutBtn" class="logout-btn">Выйти</button>
+            </div>
+        </nav>
+
+        <main class="messages-container">
+            <div class="chat-sidebar">
+                <div class="chat-tabs">
+                    <button class="tab-btn active" data-tab="general">Общий чат</button>
+                    <button class="tab-btn" data-tab="groups">Группы</button>
+                </div>
+                
+                <div class="groups-list" id="groupsList" style="display: none;">
+                    <div class="groups-header">
+                        <h3>Группы мероприятий</h3>
+                        <button id="createGroupBtn" class="create-group-btn" style="display: none;">
+                            + Создать группу
+                        </button>
+                    </div>
+                    <div id="groupsContainer">
+                        <!-- Группы добавляются динамически -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-main">
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Сообщения добавляются динамически -->
+                </div>
+                
+                <form id="messageForm" class="message-form">
+                    <input type="text" id="messageInput" placeholder="Введите сообщение...">
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Модальное окно создания группы -->
+    <div id="createGroupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Создание группы</h2>
+            <form id="createGroupForm">
+                <div class="form-group">
+                    <label for="groupName">Название группы</label>
+                    <input type="text" id="groupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="groupDescription">Описание</label>
+                    <textarea id="groupDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="eventSelect">Мероприятие</label>
+                    <select id="eventSelect">
+                        <!-- Мероприятия добавляются динамически -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Участники</label>
+                    <div class="members-container" id="membersContainer">
+                        <!-- Участники добавляются динамически -->
+                        <p class="loading-text">Загрузка пользователей...</p>
+                    </div>
+                </div>
+                <button type="submit" class="admin-button">Создать группу</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/messages.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+</html> 

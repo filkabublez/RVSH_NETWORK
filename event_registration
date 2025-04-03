@@ -1,0 +1,13 @@
+// Event Registration Workflow
+When: "Register" button is clicked
+Steps:
+1. Make changes to a thing:
+   - Thing: Current Event
+   - Change: Add Current User to Attendees
+
+2. Make changes to a thing:
+   - Thing: Current User
+   - Change: Add Current Event to Registered_Events
+
+3. Display notification:
+   - Text: "Successfully registered for [Event:Title]"

@@ -1,0 +1,24 @@
+// Create Events Page elements
+1. Calendar View (Group):
+   - Install Calendar Plugin
+   - Configure Calendar:
+     - Data Source: Event
+     - Date Field: Date
+     - Title Field: Title
+
+2. Event Details Panel (Group):
+   - Visible when: Event is selected
+   - Elements:
+     - Title (Text)
+     - Date (Text)
+     - Description (Text)
+     - Attendees Count (Number)
+     - Register Button (Button):
+       - Condition: Current User not in Event's Attendees
+
+3. My Events Tab (Repeating Group):
+   - Data Source: Current User's Registered_Events
+   - Elements per cell:
+     - Event Title (Text)
+     - Date (Text)
+     - Unregister Button (Button)

@@ -1,0 +1,36 @@
+// Create User type
+Type: User
+Fields:
+- Name (text)
+- Email (text, mark as unique)
+- Profile_Photo (image)
+- Role (text, options list: "Admin", "Counselor")
+- Goals (list of text)
+- Registered_Events (list of type: Event)
+- Created_Date (date)
+
+// Create Event type
+Type: Event
+Fields:
+- Title (text)
+- Date (date/time)
+- Description (text)
+- Created_By (type: User)
+- Attendees (list of type: User)
+- Created_Date (date)
+
+// Create Message type
+Type: Message
+Fields:
+- Sender (type: User)
+- Receiver (type: User, optional)
+- Content (text)
+- Timestamp (date/time)
+- Is_Group_Chat (yes/no)
+
+// Create Resource type
+Type: Resource
+Fields:
+- Title (text)
+- URL (text)
+- Created_By (type: User) 
